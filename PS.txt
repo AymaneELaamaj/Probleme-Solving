@@ -1,0 +1,3 @@
+	Quick Rule for Now:
+See "find pair" + unsorted array → Think HashMap first!
+See "sorted array" + "two elements" → Think Two Pointers!
