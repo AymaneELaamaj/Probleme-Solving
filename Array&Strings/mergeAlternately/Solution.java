@@ -1,3 +1,4 @@
+
 class Solution {
     public String mergeAlternately(String word1, String word2) {
         if(word1.length()==0 && word2.length()==0 ) {
