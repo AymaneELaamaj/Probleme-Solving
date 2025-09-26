@@ -1,15 +1,30 @@
-    class Solution {
-        public int compress(char[] chars) {
-            Map<Character,Integer> newarr=new HashMap<>();
-            int j=0;
-            for(int i=0;i<chars.length;i++){
-                newarr.put(chars[i],newarr.getorDefault(chars[i],0)+1);
+class Solution {
+    public int compress(char[] chars) {
+        int read=0;
+        int write=0;
+        while(read<chars.length){
+            int count =0;
+            char current=chars[read];
+            while(read<chars.length && current==chars[read]){
+                read++;
+                count++;
             }
-            for(Character key : newarr.keySet()) {
-            Integer value = newarr.get(key);
-            j++;
+            chars[write]=current;
+            write++;
+            if(count>1){
+                String countStr = String.valueOf(count);
+                for(char digit:countStr.toCharArray()){
+                    chars[write] = digit;
+                    write++;
+                }
+
+                
             }
-            return j;
-            
+
+
+
         }
+        return write; 
+        
     }
+}
